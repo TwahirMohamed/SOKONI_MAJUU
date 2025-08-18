@@ -119,6 +119,7 @@ class Product(models.Model):
     source = models.CharField(max_length=50)  # amazon, ebay, etc.
 
 # orders/models.py
+```text
 class Order(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
@@ -132,7 +133,8 @@ class Order(models.Model):
         ('delivered', 'Delivered'),
     ], default='pending')
     created_at = models.DateTimeField(auto_now_add=True)
-
+```
+```text
 # payments/models.py
 class Payment(models.Model):
     order = models.OneToOneField(Order, on_delete=models.CASCADE)
@@ -144,6 +146,7 @@ class Payment(models.Model):
     ])
     transaction_id = models.CharField(max_length=100)
     created_at = models.DateTimeField(auto_now_add=True)
+```
 #  💵 Payment Gateway Setup
 1. Stripe Checkout (easiest to integrate with Django):
 import stripe
@@ -151,6 +154,7 @@ from django.conf import settings
 from django.shortcuts import redirect
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
+```text
 
 def checkout(request, order_id):
     order = Order.objects.get(id=order_id)
@@ -171,5 +175,6 @@ def checkout(request, order_id):
         cancel_url='https://yourapp.com/cancel/',
     )
     return redirect(session.url, code=303)
+```
 
 2. MPESA 

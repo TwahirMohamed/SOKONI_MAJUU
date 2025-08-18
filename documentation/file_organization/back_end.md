@@ -1,3 +1,5 @@
+
+```text
 shopmajuu/
 │── manage.py
 │── requirements.txt
@@ -92,3 +94,4 @@ shopmajuu/
 └── templates/                # Global templates
     ├── base.html             # Global layout
     └── includes/             # Navbar, footer, etc.
+```

@@ -1,3 +1,5 @@
+
+```text
 shopmajuu/
 ├── static/
 │   ├── css/
@@ -23,3 +25,4 @@ shopmajuu/
         ├── login.html
         ├── register.html
         └── profile.html
+```

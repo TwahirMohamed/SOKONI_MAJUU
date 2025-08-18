@@ -103,21 +103,25 @@ Your app updates order status + provides tracking.
 # Database entities
 
 # users/models.py
+```text
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
 class User(AbstractUser):
     phone = models.CharField(max_length=20)
     address = models.TextField()
+```
 
 # catalog/models.py
+```text
+
 class Product(models.Model):
     title = models.CharField(max_length=255)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     image_url = models.URLField()
     external_id = models.CharField(max_length=100)  # ID from Amazon/eBay API
     source = models.CharField(max_length=50)  # amazon, ebay, etc.
-
+```
 # orders/models.py
 ```text
 class Order(models.Model):
@@ -134,8 +138,9 @@ class Order(models.Model):
     ], default='pending')
     created_at = models.DateTimeField(auto_now_add=True)
 ```
-```text
+
 # payments/models.py
+```text
 class Payment(models.Model):
     order = models.OneToOneField(Order, on_delete=models.CASCADE)
     amount = models.DecimalField(max_digits=10, decimal_places=2)

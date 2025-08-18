@@ -155,7 +155,7 @@ from django.shortcuts import redirect
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
 ```text
-
+```text
 def checkout(request, order_id):
     order = Order.objects.get(id=order_id)
     session = stripe.checkout.Session.create(

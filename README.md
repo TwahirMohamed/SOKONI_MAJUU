@@ -183,3 +183,8 @@ def checkout(request, order_id):
 ```
 
 2. MPESA 
+
+# Each app and its features:
+## User App
+1. manages user registrations.
+2. manages login, logout and authentications

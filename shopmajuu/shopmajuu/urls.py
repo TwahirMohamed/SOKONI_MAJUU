@@ -23,5 +23,5 @@ urlpatterns = [
     path('users/', include('users.urls')), # order is important as django looks from top to bottom
     path('store/', include('store.urls')),
     path('accounts/', include('django.contrib.auth.urls')), # enables authentication system
-    path("", TemplateView.as_view(template_name="home.html"), name="home"),
+    path("", TemplateView.as_view(template_name="templates/registration/login.html"), name="home"),
 ]

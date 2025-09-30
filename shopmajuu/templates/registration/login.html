@@ -9,4 +9,10 @@
   {{ form }}
   <button type="submit">Log In</button>
 </form>
+<div class="register-link">
+            <form action="{% url './users/templates/users/register' %}">
+                <button type="submit" class="btn">Create an account</button>
+            </form>
+            
+        </div>
 {% endblock %}

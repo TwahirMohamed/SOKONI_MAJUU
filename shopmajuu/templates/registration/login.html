@@ -1,18 +1,25 @@
-<!-- templates/registration/login.html -->
-{% extends "base.html" %}
-{% block title %}Login{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+    <h2>Login</h2>
 
-{% block content %}
-<h2>Log In</h2>
-<form method="post">
-  {% csrf_token %}
-  {{ form }}
-  <button type="submit">Log In</button>
-</form>
-<div class="register-link">
-            <form action="{% url './users/templates/users/register' %}">
-                <button type="submit" class="btn">Create an account</button>
-            </form>
-            
-        </div>
-{% endblock %}
+    {% if form.errors %}
+        <p style="color: red;">Invalid username or password. Please try again.</p>
+    {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Login</button>
+    </form>
+
+    <p>
+        Don’t have an account? 
+        <a href="{% url 'register' %}">Register here</a>
+    </p>
+</body>
+</html>

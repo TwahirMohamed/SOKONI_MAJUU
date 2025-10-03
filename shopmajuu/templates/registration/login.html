@@ -1,25 +1,70 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Majuu Login</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/script.js' %}"></script>
 </head>
 <body>
-    <h2>Login</h2>
+    <div class="nature-background">
+        <div class="floating-leaf leaf-1"></div>
+        <div class="floating-leaf leaf-2"></div>
+        <div class="floating-leaf leaf-3"></div>
+        <div class="floating-leaf leaf-4"></div>
+    </div>
 
-    {% if form.errors %}
-        <p style="color: red;">Invalid username or password. Please try again.</p>
-    {% endif %}
+    <div class="login-container">
+        <div class="wellness-card">
+            <div class="organic-border"></div>
+            
+            <div class="mindful-header">
+                <div class="zen-logo">
+                    <!-- logo svg -->
+                </div>
+                <h1>Shop Majuu</h1>
+                <h2>Welcome</h2>
+                <p>Login to your shopmajuu account</p>
+            </div>
+            
+            <!-- ✅ Django Login Form -->
+            <form method="post" class="harmony-form" novalidate>
+                {% csrf_token %}
+                {{ form.non_field_errors }}
 
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Login</button>
-    </form>
+                <div class="organic-field">
+                    <input type="text" name="username" required id="id_username" autocomplete="username">
+                    <label for="id_username">Email or Username</label>
+                </div>
 
-    <p>
-        Don’t have an account? 
-        <a href="{% url 'register' %}">Register here</a>
-    </p>
+                <div class="organic-field">
+                    <input type="password" name="password" required id="id_password" autocomplete="current-password">
+                    <label for="id_password">Password</label>
+                </div>
+
+                <div class="mindful-options">
+                    <label class="zen-checkbox">
+                        <input type="checkbox" name="remember">
+                        <span class="checkbox-text">Keep me centered</span>
+                    </label>
+                    <a href="{% url 'password_reset' %}" class="healing-link">Restore access</a>
+                </div>
+
+                <button type="submit" class="harmony-button">
+                    <span class="button-text">Enter Sanctuary</span>
+                </button>
+            </form>
+
+            <div class="nurture-signup">
+                <span>Begin your journey </span>
+                <a href="{% url 'register' %}" class="growth-link">Sign Up</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>
+

@@ -21,7 +21,8 @@ from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", auth_views.LoginView.as_view(template_name="registration/login.html"), name="home"),
+    path("", include('core.urls')),
+    path("login/", auth_views.LoginView.as_view(template_name="registration/login.html"), name="home"),
     path('accounts/', include('django.contrib.auth.urls')),# enables authentication system
     path("users/", include('users.urls',)), # order is important as django looks from top to bottom
     path('store/', include('store.urls')),

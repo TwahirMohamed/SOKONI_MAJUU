@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'core',
     'users',
     'store',
 ]
@@ -148,3 +149,4 @@ AUTH_USER_MODEL = 'users.CustomUser'
 
 LOGIN_REDIRECT_URL = "home"  # redirects the user to home upon a successful login 
 LOGOUT_REDIRECT_URL = "login" # redirects the user to login page upon logout
+LOGIN_URL = '/login/'    # Where @login_required redirects if not logged in

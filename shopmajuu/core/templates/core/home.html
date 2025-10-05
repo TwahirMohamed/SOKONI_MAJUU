@@ -19,6 +19,11 @@
             color: #2b593f;
             margin-bottom: 1rem;
         }
+                /* Container for the buttons */
+        .button-group {
+            display: flex;
+            gap: 20px; /* space between the two buttons */
+        }
         a {
             text-decoration: none;
             color: white;
@@ -36,7 +41,9 @@
 <body>
     <h1>Welcome to ShopMajuu/ Green Shippers 🌿</h1>
     <p>Discover cheap,balance,fast and sustainable way of shipping.</p>
-
-    <a href="{% url 'login' %}">Login to Your Account</a>
+    <div class="button-group">
+        <a href="{% url 'login' %}">Login</a>
+        <a href="{% url 'register' %}">Sign Up</a>
+    </div>
 </body>
 </html>

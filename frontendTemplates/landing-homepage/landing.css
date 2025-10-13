@@ -11,7 +11,7 @@ body {
     font-family: "Poppins", sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, var(--light-bg), #dcedc8);
+    background: linear-gradient(135deg, var(--light-bg), #c0e3f3);
     color: var(--text-dark);
     overflow-x: hidden;
     animation: fadeIn 1s ease-out;
@@ -141,6 +141,11 @@ nav {
   display: block;
   opacity: 1;
   visibility: visible;
+}
+.description {
+    display: block;
+    background-color: aqua;
+    display: flex;
 }
 
 /* ---------- ANIMATIONS ---------- */

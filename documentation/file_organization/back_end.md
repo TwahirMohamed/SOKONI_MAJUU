@@ -64,7 +64,7 @@ shopmajuu/
 │   │       └── profile.html
 │   └── static/users/
 │
-├── warehouse/                # Shipping & local warehouse mgmt
+├── warehouse/                # Shipping & local warehouse mgmt # this app will deal with warehouse code generation, tracking activities, display number of orders a users has inbound and outbound
 │   ├── __init__.py
 │   ├── models.py             # Warehouse, shipment tracking
 │   ├── views.py              # Order tracking

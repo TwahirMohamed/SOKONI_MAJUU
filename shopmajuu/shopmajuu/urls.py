@@ -26,4 +26,5 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),# enables authentication system
     path("users/", include('users.urls',)), # order is important as django looks from top to bottom
     path('store/', include('store.urls')),
+    path('warehouses/', include('warehouses.urls')),
 ]

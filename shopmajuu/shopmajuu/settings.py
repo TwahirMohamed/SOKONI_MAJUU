@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'core',
     'users',
     'store',
+    'warehouses',# app for activity like tracking, order display(inbound and outbound), pending payments, issue tickets. order claims, returns
 ]
 
 MIDDLEWARE = [
